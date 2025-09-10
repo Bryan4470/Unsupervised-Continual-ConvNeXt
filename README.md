@@ -17,8 +17,6 @@ KPK memory:
 
 SCL with SAM: Structure-based Contrastive Learning uses SAM masks to pull same-structure patches together and push different structures apart.
 
-Setting: 15 sequential MVTec AD tasks; no task IDs provided at inference.
-
 ## environment
 
 ### basic
