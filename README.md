@@ -35,7 +35,7 @@ cd segment-anything; pip install -e .
 ```
 
 ## prepare for training
-rename the dataset dir to 'mvtec2d' and create SAM senmantic directory
+rename the dataset dir to 'mvtec2d' and create SAM semantic directory
 (processed mvtec2d-sam-b.zip is provided in repository)
 ```
 cp -r $mvtec_origin_data_path('./mvtec2d') $mvtec_data_path('./mvtec2d-sam-b')
@@ -43,15 +43,15 @@ cd segment_anything
 python3 dataset_sam.py --sam_type 'vit_b' --sam_checkpoint $your_sam_path --data_path $mvtec_data_path
 ```
 
-## training and evaluation
-environment prepare:
+## Training and Evaluation
+Environment prepare:
 ```
 datapath=/hhd3/m3lab/data/mvtec2d datasets=('bottle' 'cable' 'capsule' 'carpet' 'grid' 'hazelnut' 'leather' 'metal_nut' 'pill' 'screw' 'tile' 'toothbrush' 'transistor' 'wood' 'zipper')
 dataset_flags=($(for dataset in "${datasets[@]}"; do echo '-d '$dataset; done))
 ```
 
 <!-- datapath=/hhd3/m3lab/data/visa datasets=('candle' 'capsules' 'cashew' 'chewinggum' 'fryum' 'macaroni1' 'macaroni2' 'pcb1' 'pcb2' 'pcb3' 'pcb4' 'pipe_fryum') -->
-training:
+Training:
 ```
 CUDA_VISIBLE_DEVICES=0 python3 run_ucad.py \
   --gpu 0 \
