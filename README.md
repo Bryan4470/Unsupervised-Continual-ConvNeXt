@@ -1,22 +1,19 @@
 # Unsupervised Continual ConvNeXt for Visual Industrial Anomaly Detection
+<img width="926" height="360" alt="image" src="https://github.com/user-attachments/assets/59dbcaeb-6e28-4ab7-a39b-7ff2c67179e5" />
+
 
 ## Introduction
 
 Backbone: convnext_base_in22ft1k (ImageNet-22k finetuned), kept frozen
 
 Dual-Prompt:
-
-Kernel prompt (additive delta on DWConv weights)
-
-Mask prompt (FiLM-style spatial modulation with bounded tanh + learnable scale)
+- Kernel prompt (additive delta on DWConv weights)
+- Mask prompt (FiLM-style spatial modulation with bounded tanh + learnable scale)
 
 KPK memory:
-
-Keys (from frozen model) identify task at test time
-
-Prompts (per-task) adapt features
-
-Knowledge (coreset of normal features) enables PatchCore kNN scoring
+- Keys (from frozen model) identify task at test time
+- Prompts (per-task) adapt features
+- Knowledge (coreset of normal features) enables PatchCore kNN scoring
 
 SCL with SAM: Structure-based Contrastive Learning uses SAM masks to pull same-structure patches together and push different structures apart.
 
